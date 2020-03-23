@@ -1,15 +1,13 @@
 <%
-  divisor = 10045
-  dividend = 50
+  divisor = 10345356
+  dividend = 500
   result = divisor//dividend
   remainder = divisor%dividend
   divisorpool = [int(d) for d in str(divisor)]
   padding = '0' * (len(str(remainder))+1)
   register = 0
-  lpad = 0
   while register < dividend:
     register = register * 10 + divisorpool.pop(0)
-    lpad += 1
 %>
 \setstackgap{S}{1.5pt}
 \stackMath\def\stackalignment{r}\(
@@ -20,14 +18,15 @@
   subtractor = 0
   while register - subtractor >= dividend:
     subtractor += dividend
+  shift = len(str(register)) - len(str(subtractor))
   register = (register - subtractor) * 10 + divisorpool.pop(0)
-  lpad += 1
-%> {\ph{${'0' * (lpad - 1)}}\underline{${subtractor}}} \ph{${'0' * lpad}}${register}
+%> {\ph{${'0' * (len(str(divisor))-len(divisorpool)-len(str(subtractor))-1-shift)}}\underline{\ph{${'0' * shift}}${subtractor}}} \ph{${'0' * (len(str(divisor))-len(divisorpool)-len(str(register)))}}${register}
 % endwhile
 <%
   subtractor = 0
   while register - subtractor >= dividend:
     subtractor += dividend
-%> {\ph{${'0' * lpad}}\underline{${subtractor}}} \ph{${'0' * (lpad + 1)}}${remainder}\ph{${padding}}
+  shift = len(str(register)) - len(str(subtractor))
+%> {\ph{${'0' * (len(str(divisor))-len(divisorpool)-len(str(subtractor))-shift)}}\underline{\ph{${'0' * shift}}${subtractor}}} \ph{${'0' * (len(str(divisor))-len(divisorpool)-len(str(remainder)))}}${remainder}\ph{${'0' * (len(str(remainder))+1)}}
 }
 }\)
