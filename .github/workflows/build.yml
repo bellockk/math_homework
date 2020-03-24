@@ -23,6 +23,6 @@ jobs:
     - uses: actions/checkout@v2
       
     - name: Install Dependencies
-      run: sudo apt-get install scons
+      run: sudo apt-get install scons python-mako
     - name: Build Document
       run: scons
