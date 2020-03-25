@@ -38,7 +38,7 @@
 
 <%
   numpy.random.seed(SEED)
-  num_problems = 19
+  num_problems = 20
   max_divisor = 100
   max_dividend = 10000
   problems = numpy.column_stack((
@@ -46,7 +46,7 @@
     numpy.random.randint(max_dividend + 1, size=num_problems+1)))
 %>
 
-\textbf{Evaluate the following long division problems with remainder notation.}
+\textbf{Directions: } Evaluate the following long division problems with remainder notation.
 
 \begin{exampleitemize}
 \item[Example:] ${long_division_solution(*problems[0])}

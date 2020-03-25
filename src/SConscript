@@ -7,7 +7,7 @@ root = os.path.dirname(Dir('.').srcnode().abspath)
 # Build Division Problems
 local_env.Mako(
     'longdivision.tex', 'longdivision.tex.mako',
-    MAKO_DICTIONARY={'SEED': 44})
+    MAKO_DICTIONARY={'SEED': 42})
 
 pdf = local_env.PDF('document.tex')
 install = local_env.InstallAs('Homework.pdf', pdf)
