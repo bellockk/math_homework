@@ -5,8 +5,10 @@
 % Long Division
 \usepackage{tasks}
 \NewTasks[style=enumerate,label-offset=7em,after-item-skip=10em]{exampleitemize}[\item](1)
-\NewTasks[style=enumerate,label-offset=4em,after-item-skip=10em]{divitemize}[\item](4)
+\NewTasks[style=enumerate,label-offset=4em,after-item-skip=8em]{divitemize}[\item](4)
 \NewTasks[style=enumerate,label-offset=4em,]{divsolitemize}[\item](4)
+\NewTasks[style=enumerate,label-offset=4em,after-item-skip=8em]{mulitemize}[\item](4)
+\NewTasks[style=enumerate,label-offset=4em,]{mulsolitemize}[\item](4)
 \usepackage{scalerel}
 \usepackage{stackengine}
 \usepackage{xcolor}
@@ -16,6 +18,10 @@
 \begin{document}
 \hfill{}Name: \underline{\hspace{2in}} Date: \underline{\hspace{1in}}
 \vfill
+
 \input{longdivision}
+\clearpage
+
+\input{longmultiplication}
 
 \end{document}

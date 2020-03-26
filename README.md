@@ -13,4 +13,6 @@ The results of the build can then be read from dist/Homework.pdf
 Change the "SEED" in the `src/SConscript` file and re-build.
 
 ![Example Questions](https://raw.github.com/bellockk/math_homework/master/example/Homework-0.png)
+![Example Solutions](https://raw.github.com/bellockk/math_homework/master/example/Homework-2.png)
 ![Example Solutions](https://raw.github.com/bellockk/math_homework/master/example/Homework-1.png)
+![Example Solutions](https://raw.github.com/bellockk/math_homework/master/example/Homework-3.png)

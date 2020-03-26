@@ -37,13 +37,14 @@
 </%def>
 
 <%
-  numpy.random.seed(SEED)
   num_problems = 20
   max_divisor = 100
   max_dividend = 10000
-  problems = numpy.column_stack((
-    numpy.random.randint(max_divisor + 1, size=num_problems+1),
-    numpy.random.randint(max_dividend + 1, size=num_problems+1)))
+  numpy.random.seed(SEED)
+  stream1 = numpy.random.randint(2, max_divisor + 1, size=num_problems+1)
+  numpy.random.seed(SEED + 1)
+  stream2 = numpy.random.randint(max_dividend + 1, size=num_problems+1)
+  problems = numpy.column_stack((stream1, stream2))
 %>
 
 \textbf{Directions: } Evaluate the following long division problems with remainder notation.

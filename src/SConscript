@@ -3,11 +3,17 @@ Import('env')
 local_env = env.Clone()
 
 root = os.path.dirname(Dir('.').srcnode().abspath)
+seed = 45
 
 # Build Division Problems
 local_env.Mako(
     'longdivision.tex', 'longdivision.tex.mako',
-    MAKO_DICTIONARY={'SEED': 42})
+    MAKO_DICTIONARY={'SEED': seed})
+
+# Build Multiplcation Problems
+local_env.Mako(
+    'longmultiplication.tex', 'longmultiplication.tex.mako',
+    MAKO_DICTIONARY={'SEED': seed + 3})
 
 pdf = local_env.PDF('document.tex')
 install = local_env.InstallAs('Homework.pdf', pdf)
